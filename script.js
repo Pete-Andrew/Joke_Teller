@@ -23,11 +23,19 @@ function test() {
 
 // get jokes from Joke API
 async function getJokes () {
+// joke variable has been created so that both one and two part jokes can be told (2 part jokes have different set up in the JSON)
+let joke = "";
     const apiUrl = 'https://v2.jokeapi.dev/joke/Programming,Pun?blacklistFlags=nsfw,religious,racist,sexist,explicit';
     try {
        const response = await fetch(apiUrl);
        const data = await response.json();
-       console.log(data);
+        // if data.setup exists (e.g. the joke is 2 part), else if it doesn't (e.g. the joke is a one liner) then joke = data.joke
+       if (data.setup) {
+        joke = `${data.setup} ... ${data.delivery}`;
+     } else {
+        joke = data.joke;
+     }
+     console.log(joke);
     } catch (error) {
         // Catch errors here
         console.log("error: ", error)
