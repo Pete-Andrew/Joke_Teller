@@ -26,7 +26,7 @@ function tellMe(joke) {
     });
 }
 
-// get jokes from Joke API
+// get jokes from Joke API - this API DOES NOT USE AN API KEY! 
 async function getJokes () {
 // joke variable has been created so that both one and two part jokes can be told (2 part jokes have different set up in the JSON)
 let joke = "";
@@ -37,8 +37,10 @@ let joke = "";
         // if data.setup exists (e.g. the joke is 2 part), else if it doesn't (e.g. the joke is a one liner) then joke = data.joke
        if (data.setup) {
         joke = `${data.setup} ... ${data.delivery}`;
+        console.log(data)
      } else {
         joke = data.joke;
+        console.log(data)
      }
      //text-to-speech
      tellMe(joke);
@@ -47,9 +49,13 @@ let joke = "";
     } catch (error) {
         // Catch errors here
         console.log("API is not responding, error: ", error)
-        // insert local API here
-
+        console.log("will pull joke from local JSON")
+        
+        // if API fails, use local JSON 
+        joke = localJokes[5];
     }
+    tellMe(joke);
+    toggleButton();
 }
 
 // add event listener to the button, alternative to this is to put: onclick="getJokes()"; in the HTML button info (e.g. next to button id)
