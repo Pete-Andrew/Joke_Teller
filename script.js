@@ -49,6 +49,8 @@ let joke = "";
     } catch (error) {
         // Catch errors here
         console.log("API is not responding, error: ", error);
+        alert("Looks like you ain't got no API key, so here's your joke in a prompt! \n \n" + joke)
+
         // console.log("will pull joke from local JSON")
         // if API fails, use local JSON 
         //joke = localJokes[5];
