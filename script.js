@@ -37,10 +37,10 @@ let joke = "";
         // if data.setup exists (e.g. the joke is 2 part), else if it doesn't (e.g. the joke is a one liner) then joke = data.joke
        if (data.setup) {
         joke = `${data.setup} ... ${data.delivery}`;
-        console.log(data)
+        // console.log(data)
      } else {
         joke = data.joke;
-        console.log(data)
+        // console.log(data)
      }
      //text-to-speech
      tellMe(joke);
@@ -48,14 +48,13 @@ let joke = "";
      toggleButton();
     } catch (error) {
         // Catch errors here
-        console.log("API is not responding, error: ", error)
-        console.log("will pull joke from local JSON")
-        
+        console.log("API is not responding, error: ", error);
+        // console.log("will pull joke from local JSON")
         // if API fails, use local JSON 
-        joke = localJokes[5];
-    }
-    tellMe(joke);
-    toggleButton();
+        //joke = localJokes[5];
+        // tellMe(joke);
+        // toggleButton();
+    }   
 }
 
 // add event listener to the button, alternative to this is to put: onclick="getJokes()"; in the HTML button info (e.g. next to button id)
