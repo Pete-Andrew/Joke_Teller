@@ -1,5 +1,14 @@
-//Comment out this let API_KEY and comment back in the API from apiKey.js if you want to pull from the local API
+//Comment out this let API_KEY and comment back in the API from apiKey.js if you want to pull from the local API.
+//declares API_KEY as a global variable
 let API_KEY = "";
+
+// if (API_KEY_Local !== 'undefined') {
+//     API_KEY = API_KEY_Local;
+//     console.log("using local API Key");        
+//     } else {
+//     API_KEY ="";
+//     console.log("no local API key");
+//     }
 
 const button = document.getElementById('button');
 const audioElement = document.getElementById('audio');
@@ -34,6 +43,9 @@ async function getJokes () {
 // joke variable has been created so that both one and two part jokes can be told (2 part jokes have different set up in the JSON)
 let joke = "";
     const apiUrl = 'https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,racist,sexist,explicit';
+    // how the API calls with all possible types of jokes and nothing blacklisted: 
+    // https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Dark,Pun,Spooky,Christmas
+
     try {
        const response = await fetch(apiUrl);
        const data = await response.json();
