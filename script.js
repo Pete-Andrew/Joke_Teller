@@ -1,3 +1,4 @@
+
 const button = document.getElementById('button');
 const audioElement = document.getElementById('audio');
 
@@ -69,6 +70,8 @@ function APIsubmitBtnClick() {
     // enteredAPI updates the global variable, previously I was creating a new one which was unnecessary. 
     enteredAPI = document.getElementById("user_API_KEY_id").value;
     console.log("API that has been input = " + enteredAPI);
+    API_KEY = enteredAPI;
+    return API_KEY;
     }
 
 
