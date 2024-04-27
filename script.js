@@ -65,6 +65,12 @@ button.addEventListener('click', getJokes);
 //The event listener waits until the joke has 'ended' before calling the toggle button function which re-enables the button.
 audioElement.addEventListener('ended', toggleButton);
 
+function APIsubmitBtnClick() {
+    // enteredAPI updates the global variable, previously I was creating a new one which was unnecessary. 
+    enteredAPI = document.getElementById("user_API_KEY_id").value;
+    console.log("API that has been input = " + enteredAPI);
+    }
+
 
 // https://rapidapi.com/collection/best-text-to-speech-apis
 

@@ -5,24 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joke Teller</title>
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+<!-- jquery needs to be installed for bootstrap to work properly, see also the script tags at the end of the body -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>    
+
 
 </head>
 <body>
 
+  <!-- nav bar -->
+  <div class="pos-f-t">
+    <div class="collapse" id="navbarToggleExternalContent">
+      <div id="navBar" class="custom-navbar p-4">
+        <h4 class="text-white">API key</h4>
+        <span class="text-white">In order to get the robot to speak to you, you will need an API key from: <a href="https://www.voicerss.org/api/">voiceRSS.org</a></span>
+        <br><br>
+        <span class="text-white">Enter Your API key here:    
+          <br><input type="text" id="user_API_KEY_id" name="user_API_KEY_name">
+          <input type="submit" value="Submit" id="summitButtonID" onclick="APIsubmitBtnClick()">
+          
+         
+      </span>
+
+      </div>
+    </div>
+    <nav class="navbar custom-navbar">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <!-- <span class="navbar-toggler-icon"></span> -->
+          <div>Add API Key</div>
+      </button>
+    </nav>
+  </div>
+
+
     <!-- Script -->
-    <div class="container">      
-        <div class="audioSlave">
+    <div class="container">
+      
+         <div class="audioSlave">
             <button id="button">Tell me a joke</button>
             <br>
             <audio id="audio" controls></audio>
         </div>
     </div>
-
+    
+    
     <script src="apiKey.js"></script>
     <script src="localJokes.js"></script>
     <script src="voice.js"></script>
     <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+YE0atf5fF6tFt/D65Jm+A+8G5Gn2G6ZB/pi+0n" crossorigin="anonymous"></script>   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </body>
 </html>
