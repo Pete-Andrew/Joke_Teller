@@ -1,3 +1,5 @@
+//Comment out this let API_KEY and comment back in the API from apiKey.js if you want to pull from the local API
+let API_KEY = "";
 
 const button = document.getElementById('button');
 const audioElement = document.getElementById('audio');
